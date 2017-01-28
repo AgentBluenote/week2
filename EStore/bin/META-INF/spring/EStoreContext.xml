@@ -15,14 +15,18 @@
       <property name="lastUpdateDate" value="06/05/2014" />       
   </bean>
 
-
-  <bean id="productService"
+<!--  bean name  -->
+  <bean id="productService"  
       class="com.uciext.springfw.hw.catalog.service.impl.CatalogServiceImpl">
       <property name="product" ref="product" />
   </bean>
 
   <bean id="product"
       class="com.uciext.springfw.hw.catalog.model.Product">
+      <!-- 
+      <constructor-arg type="java.lang.String" value="Spring Framework" />
+      <constructor-arg ref="scheduleSpringFw" />
+ -->
       <property name="SKU" value="4444" />       
       <property name="productName" value="root beer" />       
       <property name="unitOfMeasure" value="US Standard" />       

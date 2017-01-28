@@ -16,7 +16,7 @@ public class Product{
 
 
     public Product(){
-        System.out.println("DEBUG: Inside Product");
+        System.out.println("DEBUG: Inside Default Constructor:  Product");
     }
 
     public Product( String SKU, String productName, 
