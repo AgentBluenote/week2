@@ -28,9 +28,11 @@ public class CatalogServiceImpl implements CatalogService {
 		this.mycatalog = mycatalog;
 	}
 	
-	/*
-	public Product getProduct(String SKU){
-		this.product = product;
+	public Product getProduct(){
+		return product;
 	}
-	*/
+
+	public void setProduct(Product product){
+		this.product = product; 
+	}
 }

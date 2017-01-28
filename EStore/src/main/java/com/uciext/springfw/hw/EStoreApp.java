@@ -19,15 +19,20 @@ public class EStoreApp {
 	
     // Get instance of service class
     BeanFactory factory = new XmlBeanFactory(new ClassPathResource("/META-INF/spring/EStoreContext.xml"));
+
     CatalogService catalogService = 
     		(CatalogService) factory.getBean("catalogService");
-//    CatalogService catalogService2 = (Product) factory.getBean("productService");
+
+    CatalogService productService = 
+    		(CatalogService) factory.getBean("productService");
 
 //    Product        productService = (Product) factory.getBean("productService");
 
     // Make a call
     Catalog catalog = catalogService.getCatalog();
-//    Product catalog = catalogService.get
+    Product product = productService.getProduct();
+
+    logger.info("Catalog: \n" + product.toString());
 
     logger.info("Catalog: \n" + catalog.toString());
   }

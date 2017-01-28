@@ -7,5 +7,6 @@ public interface CatalogService {
 	public Catalog getCatalog();
 
 //	public Product getProduct(String SKU);
+	public Product getProduct();
 }
 
