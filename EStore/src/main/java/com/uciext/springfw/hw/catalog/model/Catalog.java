@@ -1,12 +1,14 @@
 package com.uciext.springfw.hw.catalog.model;
 
 import java.lang.StringBuilder;
+import java.util.List;
 
 public class Catalog {
 
 	// Properties
     private String catalogName;
     private String lastUpdateDate;
+//    private List<Product> productList;
 
     public String getCatalogName() {
         return catalogName;
@@ -21,6 +23,15 @@ public class Catalog {
     public void setLastUpdateDate(String value) {
         this.lastUpdateDate = value;
     }
+
+    /*
+    public Product getProductList() {
+        return productList;
+    }
+    public void setLastUpdateDate(Product value) {
+        this.productList = value;
+    }
+    */
 
     public String toString() {
        StringBuilder buff = new StringBuilder("[Catalog: ")

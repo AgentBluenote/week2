@@ -3,7 +3,7 @@
    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
    xsi:schemaLocation="http://www.springframework.org/schema/beans 
        http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
-
+       
   <bean id="catalogService"
       class="com.uciext.springfw.hw.catalog.service.impl.CatalogServiceImpl">
       <property name="catalog" ref="catalog" />
@@ -11,7 +11,38 @@
 
   <bean id="catalog"
       class="com.uciext.springfw.hw.catalog.model.Catalog">
-      <property name="catalogName" value="Java Books" />       
+      <property name="catalogName" value="Jav Books" />       
       <property name="lastUpdateDate" value="06/05/2014" />       
   </bean>
+
+
+  <bean id="productService"
+      class="com.uciext.springfw.hw.catalog.service.impl.CatalogServiceImpl">
+      <property name="product" ref="product" />
+  </bean>
+
+  <bean id="product"
+      class="com.uciext.springfw.hw.catalog.model.Product">
+      <property name="SKU" value="4444" />       
+      <property name="productName" value="root beer" />       
+      <property name="unitOfMeasure" value="US Standard" />       
+
+      <!--
+      <property name="price" value="6.24" />       
+      <property name="availableQuantity" value="06/05/2014" />       
+        -->
+  </bean>
+
+  
+<!--
+<bean id="scheduleSpringFw“ 
+      class="com.uciext.springfw.model.Schedule" />
+
+<bean id="courseSpringFw" class="com.uciext.springfw.model.Course">
+<constructor-arg type="java.lang.String" value="Spring Framework" />
+<constructor-arg ref="scheduleSpringFw" />
+</bean>
+   --> 
+  
+  
 </beans>
