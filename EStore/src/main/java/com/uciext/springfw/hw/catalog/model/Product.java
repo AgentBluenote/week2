@@ -11,26 +11,25 @@ public class Product{
     private String SKU;
     private String productName;
     private String unitOfMeasure;
-//    private Double price;
-//    private Integer availableQuantity;
+    private Double price;
+    private Integer availableQuantity;
 
 
     public Product(){
-        System.out.println("DEBUG: Inside Default Constructor:  Product");
+        System.out.println("\nnDEBUG: Inside Default Constructor:  Product\nn");
     }
 
     public Product( String SKU, String productName, 
-    				String  unitOfMeasure  
-//    				Double price,
-//					Integer availableQuantity
-					){
+    				String  unitOfMeasure,  
+    				Double price,
+					Integer availableQuantity){
 
-        System.out.println("DEBUG: Inside Product(String,String,String,Double,Integer");
+        System.out.println("\n\nDEBUG: Inside Product(String,String,String,Double,Integer)\n\n");
         this.SKU = SKU;
         this.productName = productName;
         this.unitOfMeasure = unitOfMeasure;
-//        this.price = price;
- //       this.availableQuantity = availableQuantity;
+        this.price = price;
+        this.availableQuantity = availableQuantity;
     }
 
     public String getSKU() {
@@ -54,7 +53,6 @@ public class Product{
         this.unitOfMeasure = value;
     }
 
-    /*
     public Double getPrice() {
         return price;
     }
@@ -69,7 +67,6 @@ public class Product{
     public void setPrice(Integer value) {
         this.availableQuantity = value;
     }
-    */
     
 /*
     public String getCatalogName() {
@@ -94,6 +91,7 @@ public class Product{
        .append("SKU=").append(SKU)
        .append(", productName=").append(productName)
        .append(", unitOfMeasure=").append(unitOfMeasure)
+       .append(", MIKE=").append(unitOfMeasure)
   //     .append(", price=").append(price)
 //       .append(", availableQuantity=").append(availableQuantity)
        .append("]")

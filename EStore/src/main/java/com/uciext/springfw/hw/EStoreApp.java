@@ -1,6 +1,7 @@
 package com.uciext.springfw.hw;
 
 
+//import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanFactory;
 import org.springframework.core.io.ClassPathResource;
@@ -23,17 +24,11 @@ public class EStoreApp {
     CatalogService catalogService = 
     		(CatalogService) factory.getBean("catalogService");
 
-    CatalogService productService = 
-    		(CatalogService) factory.getBean("productService");
-
-//    Product        productService = (Product) factory.getBean("productService");
-
     // Make a call
     Catalog catalog = catalogService.getCatalog();
-    Product product = productService.getProduct();
 
-    logger.info("Catalog: \n" + product.toString());
+//    logger.info("Product: " + product.toString());
 
-    logger.info("Catalog: \n" + catalog.toString());
+    logger.info("Catalog: " + catalog.toString());
   }
 }
