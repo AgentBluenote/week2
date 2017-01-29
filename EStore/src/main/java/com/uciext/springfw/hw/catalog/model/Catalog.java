@@ -34,7 +34,7 @@ public class Catalog {
     */
 
     public String toString() {
-       StringBuilder buff = new StringBuilder("[Catalog: ")
+       StringBuilder buff = new StringBuilder("[DEBUGCatalog: ")
        .append("catalogName=").append(catalogName)
        .append(", lastUpdateDate=").append(lastUpdateDate)
        .append("]")

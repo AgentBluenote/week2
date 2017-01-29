@@ -8,7 +8,7 @@ import org.springframework.core.io.ClassPathResource;
 import org.apache.log4j.Logger;
 
 import com.uciext.springfw.hw.catalog.model.Catalog;
-import com.uciext.springfw.hw.catalog.model.Product;
+//import com.uciext.springfw.hw.catalog.model.Product;
 import com.uciext.springfw.hw.catalog.service.CatalogService;
 
 public class EStoreApp {

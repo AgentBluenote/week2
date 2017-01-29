@@ -8,7 +8,7 @@ public class Product{
 //    private String catalogName;
 //    private String lastUpdateDate;
 
-    private String SKU;
+    private String SKU = null;
     private String productName;
     private String unitOfMeasure;
     private Double price;
@@ -38,6 +38,8 @@ public class Product{
     public void setSKU(String value) {
         this.SKU = value;
     }
+    
+    
 
     public String getProductName() {
         return productName;
@@ -45,6 +47,8 @@ public class Product{
     public void setproductName(String value) {
         this.productName = value;
     }
+    
+    
 
     public String getUnitOfMeasure() {
         return unitOfMeasure;
@@ -52,6 +56,7 @@ public class Product{
     public void setUnitOfMeasure(String value) {
         this.unitOfMeasure = value;
     }
+    
 
     public Double getPrice() {
         return price;
@@ -59,12 +64,13 @@ public class Product{
     public void setPrice(Double value) {
         this.price = value;
     }
+    
 
-    public Integer getAvailableQuantityPrice() {
+    public Integer getAvailableQuantity() {
         return availableQuantity;
         		
     }
-    public void setPrice(Integer value) {
+    public void setAvailableQuantity(Integer value) {
         this.availableQuantity = value;
     }
     
@@ -90,8 +96,8 @@ public class Product{
        StringBuilder buff = new StringBuilder("[Product: ")
        .append("SKU=").append(SKU)
        .append(", productName=").append(productName)
-       .append(", unitOfMeasure=").append(unitOfMeasure)
-       .append(", MIKE=").append(unitOfMeasure)
+//       .append(", unitOfMeasure=").append(unitOfMeasure)
+ //      .append(", MIKE=").append(unitOfMeasure)
   //     .append(", price=").append(price)
 //       .append(", availableQuantity=").append(availableQuantity)
        .append("]")
