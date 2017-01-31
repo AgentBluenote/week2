@@ -4,48 +4,97 @@
    xsi:schemaLocation="http://www.springframework.org/schema/beans 
        http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
        
+<!--   scope="prototype" -->
+<!-- Product  Constructor Injection -->
+  <bean id="product1"
+      class="com.uciext.springfw.hw.catalog.model.Product">
+      <constructor-arg type="java.lang.String" value="1111" />
+      <constructor-arg type="java.lang.String" value="Coca Cola" />
+      <constructor-arg type="java.lang.String" value="Metric" />
+      <constructor-arg type="java.lang.Double" value="5.01" />
+      <constructor-arg type="java.lang.Integer" value="22" />
+  </bean>
+
+<!-- Product  Constructor Injection -->
+  <bean id="product2" 
+      class="com.uciext.springfw.hw.catalog.model.Product">
+      <constructor-arg type="java.lang.String" value="2222" />
+      <constructor-arg type="java.lang.String" value="Dr. Pepper" />
+      <constructor-arg type="java.lang.String" value="Standard" />
+      <constructor-arg type="java.lang.Double" value="5.02" />
+      <constructor-arg type="java.lang.Integer" value="33" />
+  </bean>
+
+<!-- Product   Setter Injection should use default Constructor -->
+  <bean id="product3"
+      class="com.uciext.springfw.hw.catalog.model.Product">
+      <property name="SKU" value="3333" />       
+      <property name="productName" value="Sprite" />       
+      <property name="unitOfMeasure" value="metric" />       
+      <property name="price" value= "#{5.03}" />       
+<!--  <property name="availableQuantity" value="#{44*2}"/> -->
+<!--        <property name="availableQuantity" value="#{ 2 * 8  }" /> -->
+<!--        <property name="availableQuantity" value="#{catalogService.getProduct("1111").getAvailableQuantity() *2}" />      -->
+
+<!--  
+ <property name="availableQuantity" value="#{catalogService.getProduct("1111").getAvailableQuantity() * 2}" />
+      -->
+      
+<!--  
+-->      
+
+  </bean>
+
+<!-- Product   Setter Injection should use default Constructor -->
+  <bean id="product4"
+      class="com.uciext.springfw.hw.catalog.model.Product">
+      <property name="SKU" value="4444" />       
+      <property name="productName" value="Root Beer" />       
+      <property name="unitOfMeasure" value="metric" />       
+      <property name="price" value= "5.04" />       
+      <property name="availableQuantity" value="55" /> 
+  </bean>
+
+<!--   Catalog  -->
+  <bean id="catalogB"
+      class="com.uciext.springfw.hw.catalog.model.Catalog">
+      <property name="catalogName" value="Refrigerator" />       
+      <property name="lastUpdateDate" value="06/05/2014" />       
+
+
+<!--
+   	  <property name="ProductList">
+        	<list> 
+        		<ref bean ="product1" /> 
+            	<ref bean ="product2" /> 
+            	<ref bean ="product3" /> 
+            	<ref bean ="product4" /> 
+        	</list>
+      </property> 
+ -->
+
+  </bean>
+  
+  <!-- MIKE "property name" is the name of the org.mike.catalog -->
+  <!-- MIKE ref= a referenc to the bean -->
   <bean id="catalogService"
       class="com.uciext.springfw.hw.catalog.service.impl.CatalogServiceImpl">
-      <property name="catalog" ref="catalog" />
+      <property name="catalog" ref="catalogB" />
+ <!-- MIKE 
       <property name="product" ref="product2" />
+MIKE  -->     
+      
+   	  <property name="Products">
+        	<map> 
+        		<entry key="1111" value-ref="product1" /> 
+            	<entry key="2222" value-ref="product2" /> 
+            	<entry key="3333" value-ref="product3" /> 
+            	<entry key="4444" value-ref="product4" /> 
+        	</map>
+      </property> 
   </bean>
-
-  <bean id="catalog"
-      class="com.uciext.springfw.hw.catalog.model.Catalog">
-      <property name="catalogName" value="Jav Books" />       
-      <property name="lastUpdateDate" value="06/05/2014" />       
-  </bean>
-
-<!-- this one  should use default constructor -->
-  <bean id="product2"
-      class="com.uciext.springfw.hw.catalog.model.Product">
-      <property name="SKU" value="4444" />       
-      <property name="productName" value="jit" />       
-      <property name="unitOfMeasure" value="metric" />       
-      <property name="price" value= "8.8" />       
-      <property name="availableQuantity" value="9" />       
-
-  </bean>
-
-
-  <!-- Product -->
-  <bean id="product"
-      class="com.uciext.springfw.hw.catalog.model.Product">
-      <constructor-arg type="java.lang.String" value="SKU" />
-      <constructor-arg type="java.lang.String" value="P2" />
-      <constructor-arg type="java.lang.String" value="P3" />
-      <constructor-arg type="java.lang.Double" value="1.01" />
-      <constructor-arg type="java.lang.Integer" value="1" />
-
-      <!--
-      <constructor-arg ref="product" />
-      <property name="SKU" value="4444" />       
-      <property name="productName" value="root beer" />       
-      <property name="unitOfMeasure" value="US Standard" />       
-  -->
-
-  </bean>
-
   
+ <!-- MIKE 
+MIKE  -->     
   
 </beans>

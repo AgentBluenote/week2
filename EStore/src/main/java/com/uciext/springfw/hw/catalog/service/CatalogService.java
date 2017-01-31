@@ -6,7 +6,7 @@ import com.uciext.springfw.hw.catalog.model.Product;
 public interface CatalogService {
 	public Catalog getCatalog();
 
-//	public Product getProduct(String SKU);
-	public Product getProduct();
+	public Product getProduct(String SKU);
+//	public Product getProduct();
 }
 

@@ -2,11 +2,16 @@ package com.uciext.springfw.hw.catalog.model;
 
 import java.lang.StringBuilder;
 
+import org.apache.log4j.Logger;
+
+import com.uciext.springfw.hw.EStoreApp;
+
 public class Product{
 
 	// Properties
 //    private String catalogName;
 //    private String lastUpdateDate;
+	  private static Logger logger = Logger.getLogger(Product.class.getName());
 
     private String SKU = null;
     private String productName;
@@ -16,7 +21,7 @@ public class Product{
 
 
     public Product(){
-        System.out.println("\nnDEBUG: Inside Default Constructor:  Product\nn");
+    	logger.info("DEBUG: Product()\n\n");
     }
 
     public Product( String SKU, String productName, 
@@ -24,7 +29,8 @@ public class Product{
     				Double price,
 					Integer availableQuantity){
 
-        System.out.println("\n\nDEBUG: Inside Product(String,String,String,Double,Integer)\n\n");
+//        System.out.println("\n\nDEBUG: Inside Product(String,String,String,Double,Integer)\n\n");
+    	logger.info("DEBUG: Inside Product(String,String,String,Double,Integer)\n\n");
         this.SKU = SKU;
         this.productName = productName;
         this.unitOfMeasure = unitOfMeasure;
@@ -96,10 +102,9 @@ public class Product{
        StringBuilder buff = new StringBuilder("[Product: ")
        .append("SKU=").append(SKU)
        .append(", productName=").append(productName)
-//       .append(", unitOfMeasure=").append(unitOfMeasure)
- //      .append(", MIKE=").append(unitOfMeasure)
-  //     .append(", price=").append(price)
-//       .append(", availableQuantity=").append(availableQuantity)
+       .append(", unitOfMeasure=").append(unitOfMeasure)
+       .append(", price=").append(price)
+       .append(", availableQuantity=").append(availableQuantity)
        .append("]")
        ;
 
