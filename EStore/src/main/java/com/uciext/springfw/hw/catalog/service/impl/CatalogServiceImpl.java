@@ -3,7 +3,6 @@ package com.uciext.springfw.hw.catalog.service.impl;
 
 import org.apache.log4j.Logger;
 import java.util.Map;
-import java.util.List;
 
 import com.uciext.springfw.hw.catalog.model.Catalog;
 import com.uciext.springfw.hw.catalog.model.Product;
@@ -14,27 +13,12 @@ public class CatalogServiceImpl implements CatalogService {
     private static Logger logger = Logger.getLogger("com.uciext.springfw.hw.catalog.service.impl.CatalogServiceImpl");
 
     private Catalog mycatalog;
-//    private List<Product> listOfProducts;
     private Map<String, Product> myProductMap;
     
     // Defualt Constructor
 	public CatalogServiceImpl() {
-	    //logger.info("In CatalogServiceImpl()");
-		/*
-		listOfProducts = mycatalog.getProductList();
-		if(listOfProducts == null){
-		 logger.info("list is null");	
-		}
-		else{
-		 logger.info("list is NOT null");	
-		}
-		*/
+	    logger.info("In CatalogServiceImpl()");
 	}
-	
-	
-	
-	
-	//************************************** old stuff
 	
 	// interface method
 	public Catalog getCatalog() {
@@ -52,9 +36,8 @@ public class CatalogServiceImpl implements CatalogService {
 	}
 
 	public void setProducts( Map<String, Product> myProductMap ){
-	    logger.info("Inside setProductSSSSSSS");
+	    logger.info("Inside setProducts");
 		this.myProductMap = myProductMap; 
 
 	}
-	
 }
